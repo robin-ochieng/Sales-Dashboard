@@ -1,0 +1,86 @@
+/* CSS Style */
+/* Aligns the action button to the right */
+.header-left {
+  display: flex;
+  align-items: center; 
+  flex-grow: 1; 
+}
+
+.dashboard-header {
+  position: relative;
+}
+
+.control-bar {
+  position: absolute;
+  right: 0; 
+  top: 50%; 
+  transform: translateY(-50%);
+}
+
+.control-button {
+  margin-right: 10px; 
+  background-color: #007bff;
+  color: white; ;
+}
+
+
+/* Change the background color of the main header */
+.main-header {
+  background-color: #ffffff !important;
+}
+
+/* Optional: change the text color if needed */
+.main-header .logo, .main-header .navbar .nav > li > a {
+  color: #ffffff !important;
+}
+
+/* Setting the font-family for the entire body and relevant components */
+body, .btn, .input, .selectize-input, .navbar, .sidebar, 
+.content-wrapper, .main-sidebar, .left-side, .main-footer, .control-sidebar, .right-side,
+h1, h2, h3, h4, h5, h6, .shiny-plot-output, .dataTable thead th {
+  font-family: 'Mulish', sans-serif !important;
+}
+
+/* Style for active menu item */
+body .main-sidebar .sidebar .sidebar-menu li.active > a {
+  background-color: #17a2b8 !important;
+  color: white !important;
+}
+
+/* Hover effects for non-active menu items */
+body .main-sidebar .sidebar .sidebar-menu li a:hover {
+  background-color: #96d1e8 !important;
+  color: white !important;
+}
+
+/* Custom styles for bs4Cards in controlbar to ensure max-width */
+.bs4-card-custom {
+  max-width: 100%;
+} 
+
+/* Set the background color of the sidebar */
+.main-sidebar {
+  background-color: #f4f2ee !important;  /* Apply the desired color */
+  box-shadow: none !important;
+}
+
+/* custom_styles.css */
+.sidebar-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+}
+
+.sidebar-footer img {
+  height: 100px;
+}
+
+/* Attempt to universally select and style the toggle button and any child elements */
+.main-header .navbar .sidebar-toggle, 
+.main-header .navbar .sidebar-toggle *, 
+.main-header .navbar .sidebar-toggle svg {
+    color: white !important;  /* Targets font icons and text */
+    fill: white !important;  /* Targets SVG icons specifically */
+}
