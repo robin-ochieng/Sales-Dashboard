@@ -1,0 +1,12 @@
+name: SalesDashboard
+title: SalesDashboard
+username: robtech
+account: robtech
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12872224
+bundleId: 9224036
+url: https://robtech.shinyapps.io/SalesDashboard/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,0 +1,12 @@
+name: SalesDashboard
+title: SalesDashboard
+username: kafsshinyapps
+account: kafsshinyapps
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12171201
+bundleId: 9150802
+url: https://kafsshinyapps.shinyapps.io/SalesDashboard/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
