@@ -8,10 +8,17 @@ RenewalsalesDashboardUI <- function(id) {
       valueBoxOutput(ns("renewal_percentage"))
     ),
     fluidRow(
-      box(title = "Sales by Day of the Week", status = "white", solidHeader = TRUE, 
-          plotlyOutput(ns("sales_by_day_renewals")) %>% withSpinner(type = 5)),
-      box(title = "Sales Over Time", status = "white", solidHeader = TRUE,
-          plotlyOutput(ns("sales_over_time_renewals"))  %>% withSpinner(type = 5)),
+      box(
+        title = "Sales by Day of the Week", 
+        status = "white", 
+        solidHeader = TRUE,
+        plotlyOutput(ns("sales_by_day_renewals")) %>% withSpinner(type = 5)),
+      box(
+        title = "Sales Over Time", 
+        status = "white", 
+        solidHeader = TRUE,
+        plotlyOutput(ns("sales_over_time_renewals"))  %>% withSpinner(type = 5)
+        ),
       tabBox( 
           solidHeader = TRUE,
           selected = "Count of Renewal Status",
