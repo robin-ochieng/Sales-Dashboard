@@ -102,7 +102,7 @@ RenewalsalesDashboardServer <- function(id, filtered_data__renewal_business) {
   output$sales_by_day_renewals <- renderPlotly({
     data <- filtered_data__renewal_business() %>%
       filter(`Final Comments` == "Renewed") %>%
-      mutate(DayOfWeek = wday(Renewal_Date, label = TRUE)) %>%
+      mutate(DayOfWeek = lubridate::wday(Renewal_Date, label = TRUE)) %>%
       group_by(DayOfWeek) %>%
       summarize(TotalSales = sum(Premium, na.rm = TRUE)) %>%
       mutate(TotalSalesMillions = TotalSales / 1e6) %>%

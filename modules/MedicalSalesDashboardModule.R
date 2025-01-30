@@ -102,7 +102,7 @@ MedicalsalesDashboardServer <- function(id, filtered_data__health_business) {
   
   output$sales_by_day_health <- renderPlotly({
     data <- filtered_data__health_business() %>%
-      mutate(DayOfWeek = wday(Date, label = TRUE)) %>%
+      mutate(DayOfWeek = lubridate::wday(Date, label = TRUE)) %>%
       group_by(DayOfWeek) %>%
       summarize(TotalSales = sum(Sales, na.rm = TRUE)) %>%
       mutate(TotalSalesMillions = TotalSales / 1e6) %>%

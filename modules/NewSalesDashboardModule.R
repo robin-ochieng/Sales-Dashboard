@@ -108,7 +108,7 @@ salesDashboardServer <- function(id, filtered_data__new_business, new_business_m
     # Plot for sales by day of the week
     output$sales_by_day <- renderPlotly({
       data <- filtered_data__new_business() %>%
-        mutate(DayOfWeek = wday(Date, label = TRUE)) %>%
+        mutate(DayOfWeek = lubridate::wday(Date, label = TRUE)) %>%
         group_by(DayOfWeek) %>%
         summarize(TotalSales = sum(Sales, na.rm = TRUE)) %>%
         mutate(TotalSalesMillions = TotalSales / 1e6) %>%
@@ -299,7 +299,7 @@ salesDashboardServer <- function(id, filtered_data__new_business, new_business_m
         Date = as.Date(Date),  # Ensure Date is in Date format
         Day = day(Date),
         WeekOfMonth = (day(Date) - 1) %/% 7 + 1,  # Calculate week of the month
-        DayOfWeek = wday(Date, label = TRUE, abbr = TRUE)  # Get abbreviated weekday names
+        DayOfWeek = lubridate::wday(Date, label = TRUE, abbr = TRUE)  # Get abbreviated weekday names
       ) %>%
       group_by(WeekOfMonth, DayOfWeek, Day) %>%
       summarize(TotalSales = sum(Sales, na.rm = TRUE), .groups = 'drop')

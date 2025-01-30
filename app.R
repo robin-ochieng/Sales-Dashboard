@@ -16,6 +16,7 @@ library(forcats)
 library(shinycssloaders)
 library(shinyjs)
 
+
 # Load New Business Data
 sales_data <- read_excel("./data/Sales Data New Business.xlsx", 
                          sheet = "2024 Data", col_types = c("date","text", "text", "text", "text", "numeric", "text", "text", "text", "text", "numeric", "text", "text"))
@@ -62,15 +63,17 @@ ui <- dashboardPage(
   freshTheme = my_theme,
   dashboardHeader(
     title = dashboardBrand(
-      title = HTML("<div class='header-left'><strong style='font-weight: bold;'>SALES DASHBOARD</strong></div>"),
-      color = "white",
-      href = "https://vehicle.co.ke/"
+      tags$li(
+        class = "text-center header-title-container",  # Added a new class for more specific styling
+        tags$h4("Sales Dashboard", class = "header-title")
+      )
     ),
     sidebarIcon = NULL,
     controlbarIcon = NULL,
     fixed = TRUE,
-    tags$div(class = "control-bar", actionButton("toggleControlbar", "Input Controls", class = "btn btn-primary control-button"))
-  ),
+    tags$div(class = "control-bar", actionButton("toggleControlbar", "Input Controls", class = "btn btn-primary control-button")
+     )
+   ),
   sidebar = dashboardSidebar(
     skin = "light",
     sidebarMenu(
@@ -174,7 +177,7 @@ server <- function(input, output, session) {
 
     updateSelectInput(session, "new_business_month", choices = month_choices, selected = "All")
     updateSelectInput(session, "new_business_quarter", choices = quarter_choices, selected = "All")
-    updateSelectInput(session, "new_business_year", choices = year_choices, selected = format(Sys.Date(), "%Y"))
+    updateSelectInput(session, "new_business_year", choices = year_choices, selected = "2024")
   })
   
   
@@ -196,7 +199,7 @@ server <- function(input, output, session) {
     }
   })
 
-
+print(sales_data)
 
 #New Business Server Modules
   salesDashboardServer("sales_dashboard", filtered_data__new_business, reactive({ input$new_business_month }))
@@ -220,7 +223,7 @@ observe({
     # Update the selectInput for months and years
     updateSelectInput(session, "renewal_business_month", choices = month_choices, selected = "All")
     updateSelectInput(session, "renewal_business_quarter", choices = quarter_choices, selected = "All")
-    updateSelectInput(session, "renewal_business_year", choices = year_choices, selected = format(Sys.Date(), "%Y"))
+    updateSelectInput(session, "renewal_business_year", choices = year_choices, selected = "2024")
   })
   
     # Reactive expression to filter the data based on selected month, quarter, and year
@@ -265,7 +268,7 @@ observe({
     # Update the selectInput for months and years
     updateSelectInput(session, "health_business_month", choices = month_choices, selected = "All")
     updateSelectInput(session, "health_business_quarter", choices = quarter_choices, selected = "All")                  
-    updateSelectInput(session, "health_business_year", choices = year_choices, selected = format(Sys.Date(), "%Y"))
+    updateSelectInput(session, "health_business_year", choices = year_choices, selected = "2024")
   })
   
 

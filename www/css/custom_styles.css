@@ -19,8 +19,10 @@
 
 .control-button {
   margin-right: 10px; 
-  background-color: #007bff;
-  color: white; ;
+  background-color: #FFFFFF;
+  color: #0137A6 ; 
+
+
 }
 
 
@@ -74,7 +76,7 @@ body .main-sidebar .sidebar .sidebar-menu li a:hover {
 }
 
 .sidebar-footer img {
-  height: 100px;
+  height: 70px;
 }
 
 /* Attempt to universally select and style the toggle button and any child elements */
@@ -83,4 +85,34 @@ body .main-sidebar .sidebar .sidebar-menu li a:hover {
 .main-header .navbar .sidebar-toggle svg {
     color: white !important;  /* Targets font icons and text */
     fill: white !important;  /* Targets SVG icons specifically */
+}
+
+/* Additional padding to push sidebar items down */
+.sidebar-menu {
+  padding-top: 150px; 
+}
+
+/* Style container to remove list style and position correctly */
+.header-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the start of the container */
+  margin-left: 10px; /* Match the sidebar width */
+  position: relative; /* Ensure the container is positioned correctly */
+  width: 210px; /* Match the width of the sidebar-footer */
+  text-align: center; /* Center the title text */
+  padding: 3px 6px; /* Add padding to give some space around the title */
+  background-color: #fff; /* Light background color to distinguish the title area */
+  border-radius: 8px; /* Optional: Add rounded corners for a modern look */
+  border: 1px solid #625f5f;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15); /* Subtle shadow for a more professional look */
+
+}
+
+/* Style for the header title */
+.header-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0137A6;
+  padding-left: 15px; /* Space after the vertical line */
 }
